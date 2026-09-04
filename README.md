@@ -1,6 +1,4 @@
-*image w/ animated panel to be added here tomorrow :)*
-
-## gio animated LED Display setup
+## animated LED Display setup
 
 [Mu Editor](https://codewith.mu/en/download) — use for Python debugging.
 
@@ -32,3 +30,6 @@ copy these files and folders from the CircuitPython library bundle into the **`l
 * Adafruit 5V 4A Power Supply – SKU 890343 (Power Supply)
 * Female 2.1mm DC jack → screw terminals (power supply ends in barrel plug, needed to connect to Display Panel)
 
+<p align="center">
+  <img src="adaDisplay.gif" width="200" alt="Adafruit MatrixPortal LED Display Animation" />
+</p>
