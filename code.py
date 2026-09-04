@@ -7,7 +7,7 @@ from adafruit_display_text import label
 from adafruit_bitmap_font import bitmap_font
 from adafruit_matrixportal.matrixportal import MatrixPortal
 
-# global font
+# global font var
 FONT = bitmap_font.load_font("/fonts/HaxorNarrow-16.bdf")
 
 matrixportal = MatrixPortal(
@@ -109,10 +109,9 @@ group.append(
     )
 )
 
-# Yellow dot
 group.append(
     make_dot(
-        36,         # was 34 → RIGHT 2
+        36,        
         6,
         0xFFD800
     )
@@ -135,11 +134,11 @@ group.append(
         y=8
     )
 )
+
 # ==========================================
 # BOTTOM LINE
 # ==========================================
 
-# "Gl" — DON'T MOVE
 group.append(
     label.Label(
         FONT,
@@ -173,14 +172,14 @@ group.append(
 # ==========================================
 
 snowflake_data = [
-    # TOP EDGE
-    (2, 1,  0xFF0000),   # red
-    (12, 2, 0xFF8800),   # orange
-    (23, 1, 0xFFFF00),   # yellow
-    (48, 3, 0x00FF00),   # green
-    (60, 4, 0x00FFFF),   # cyan
+    # TOP 
+    (2, 1,  0xFF0000),   
+    (12, 2, 0xFF8800),   
+    (23, 1, 0xFFFF00),   
+    (48, 3, 0x00FF00),   
+    (60, 4, 0x00FFFF),   
 
-    # LEFT / RIGHT SIDES
+    # LEFT / RIGHT 
     (1, 17, 0x0088FF),
     (62, 16, 0x4444FF),
 
@@ -192,7 +191,7 @@ snowflake_data = [
     (47, 16, 0xFFFF00),
     (56, 17, 0xFF8800),
 
-    # BOTTOM EDGE
+    # BOTTOM
     (3, 30, 0xAA00FF),
     (16, 29, 0xFF00AA),
     (46, 31, 0xFF4444),
