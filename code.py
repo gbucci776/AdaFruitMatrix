@@ -7,7 +7,7 @@ from adafruit_display_text import label
 from adafruit_bitmap_font import bitmap_font
 from adafruit_matrixportal.matrixportal import MatrixPortal
 
-# custom font
+# global font
 FONT = bitmap_font.load_font("/fonts/HaxorNarrow-16.bdf")
 
 matrixportal = MatrixPortal(
@@ -97,14 +97,8 @@ def make_snowflake(x, y, color):
 
 # ==========================================
 # TOP LINE
-#
-#       Insi 🟡 ht
-#            🔴
-#
-# Yellow/red replace the "g"
 # ==========================================
 
-# "Insi" — DON'T MOVE
 group.append(
     label.Label(
         FONT,
@@ -124,31 +118,25 @@ group.append(
     )
 )
 
-# Red dot
 group.append(
     make_dot(
-        36,         # was 34 → RIGHT 2
+        36,        
         11,
         0xFF0055
     )
 )
 
-# "ht"
 group.append(
     label.Label(
         FONT,
         text="ht",
         color=0xFFFFFF,
-        x=43,       # was 41 → RIGHT 2
+        x=43,       
         y=8
     )
 )
 # ==========================================
 # BOTTOM LINE
-#
-#       Gl 🔵 bal
-#
-# Blue replaces the "o"
 # ==========================================
 
 # "Gl" — DON'T MOVE
@@ -162,22 +150,20 @@ group.append(
     )
 )
 
-# Blue dot — now slightly bigger
 group.append(
     make_big_dot(
         24,
-        22,         # moved up 1 because circle is now taller
+        22,         
         0x55DDF2
     )
 )
 
-# "bal" — RIGHT 2 more pixels
 group.append(
     label.Label(
         FONT,
         text="bal",
         color=0xFFFFFF,
-        x=32,       # was 30
+        x=32,       
         y=24
     )
 )
@@ -198,7 +184,7 @@ snowflake_data = [
     (1, 17, 0x0088FF),
     (62, 16, 0x4444FF),
 
-    # MIDDLE BETWEEN "INSIGHT" AND "GLOBAL"
+    # MIDDLE
     (6, 16,  0xFF00AA),
     (15, 17, 0xAA00FF),
     (23, 15, 0x00FFFF),
@@ -242,7 +228,6 @@ while True:
 
     for i, snowflake in enumerate(snowflakes):
 
-        # Offset each snowflake so they don't all pulse together
         brightness = brightness_steps[
             (step + i) % len(brightness_steps)
         ]
